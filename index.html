@@ -7,8 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Inter for strict, brutal discipline. Cormorant Garamond for the fluid, evolutionary 'twist' -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Ysabeau for Headings & Accents, Plus Jakarta Sans for Body & Structure -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400&family=Ysabeau:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -16,17 +16,19 @@
             --ash: #F7F7F6; /* Cold, gallery off-white */
             --obsidian: #050505; /* Deepest black with microscopic blue undertone */
             
-            /* The Evolutionary Contrast (Synthetic Organic) */
-            --jade: #B2FF05; /* Lab-grown Acid/Lime Green */
-            --cobalt: #2B00FF; /* Ultraviolet Blue */
-            --orange: #FF4500; /* Industrial Orange */
+            /* The Organic Bridge (Solves the sterility problem) */
+            --pumice: #E8E5DF; /* Warm, tactile neutral */
+
+            /* The Adaptive Campaign Accent (Variable) */
+            --campaign-accent: #FF4500; /* Currently set to Industrial Orange */
             
             /* Cinematic Timing */
             --slow-reveal: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 300;
             background-color: var(--ash);
             color: var(--obsidian);
             overflow-x: hidden;
@@ -34,33 +36,36 @@
         }
 
         /* Typography Rules */
-        .font-structure { font-family: 'Inter', sans-serif; }
-        .font-fluid { font-family: 'Cormorant Garamond', serif; }
+        .font-structure { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 300; }
+        .font-ysabeau { font-family: 'Ysabeau', sans-serif; }
         
         .macro-heading {
-            font-size: clamp(4rem, 10vw, 12rem);
-            line-height: 0.9;
-            letter-spacing: -0.02em;
-            font-weight: 900;
+            font-family: 'Ysabeau', sans-serif;
+            font-size: clamp(5rem, 12vw, 13rem);
+            line-height: 0.85;
+            letter-spacing: 0;
+            font-weight: 200; 
             text-transform: uppercase;
         }
 
         .section-heading {
+            font-family: 'Ysabeau', sans-serif;
             font-size: clamp(2.5rem, 5vw, 5rem);
             line-height: 1.1;
             letter-spacing: -0.01em;
-            font-weight: 900;
+            font-weight: 300; 
             text-transform: uppercase;
         }
 
         .body-text {
-            font-size: 1.125rem; /* 18px */
+            font-size: 1.125rem; 
             line-height: 1.6;
-            font-weight: 400;
-            max-width: 65ch; /* Strict editorial width for readability */
+            font-weight: 300;
+            max-width: 65ch; 
         }
 
         .micro-label {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.75rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -68,19 +73,12 @@
         }
 
         /* Cinematic Hover Interactions */
-        .reveal-bg-jade { transition: var(--slow-reveal); }
-        .reveal-bg-jade:hover { background-color: var(--jade); color: var(--obsidian); }
-        
-        .reveal-bg-cobalt { transition: var(--slow-reveal); }
-        .reveal-bg-cobalt:hover { background-color: var(--cobalt); color: var(--ash); }
-        .reveal-bg-cobalt:hover .body-text, .reveal-bg-cobalt:hover .micro-label { color: var(--ash); }
-        .reveal-bg-cobalt:hover .border-obsidian { border-color: var(--ash); }
-
-        .reveal-bg-orange { transition: var(--slow-reveal); }
-        .reveal-bg-orange:hover { background-color: var(--orange); color: var(--obsidian); }
+        .reveal-bg-accent { transition: var(--slow-reveal); }
+        .reveal-bg-accent:hover { background-color: var(--campaign-accent); color: var(--obsidian); }
         
         .reveal-bg-obsidian { transition: var(--slow-reveal); }
         .reveal-bg-obsidian:hover { background-color: var(--obsidian); color: var(--ash); }
+        .reveal-bg-obsidian:hover .body-text, .reveal-bg-obsidian:hover .micro-label { color: var(--ash); }
         
         /* Slow-bloom Photography */
         .img-cinematic {
@@ -101,23 +99,24 @@
 <body class="selection:bg-obsidian selection:text-ash">
 
     <!-- 00. HERO SECTION -->
-    <header class="w-full min-h-screen flex flex-col justify-between px-6 py-12 md:px-16 md:py-16">
+    <header class="w-full min-h-screen flex flex-col justify-between px-6 py-12 md:px-16 md:py-16 bg-[var(--obsidian)] text-[var(--ash)]">
         <div class="flex justify-between items-start w-full">
-            <p class="font-structure font-black text-xl tracking-tighter">00</p>
+            <p class="font-structure font-black text-xl tracking-tighter text-gray-500">00</p>
             <div class="text-right">
-                <p class="micro-label">EST. 2020</p>
-                <p class="micro-label text-gray-500">VIETNAM</p>
+                <p class="micro-label text-gray-400">EST. 2020</p>
+                <p class="micro-label text-gray-600">VIETNAM</p>
             </div>
         </div>
 
         <div class="w-full flex flex-col justify-end h-full mt-32 pb-12">
-            <h1 class="macro-heading">
-                ANT<span class="font-fluid italic lowercase">hair</span><br>
-                ORGANIZATION
-            </h1>
-            <div class="mt-12 flex flex-col md:flex-row justify-between md:items-end w-full border-t border-obsidian pt-6">
-                <p class="body-text font-medium max-w-md">Bản tuyên ngôn chính thức chi tiết hóa cấu trúc, triết lý và tương lai chiến lược của thương hiệu.</p>
-                <p class="micro-label mt-6 md:mt-0">TÀI LIỆU NỘI BỘ & ĐƯỢC GIÁM TUYỂN</p>
+            <div class="mb-6">
+                <img src="Logo 2026.png" alt="ANThair Logo" class="h-24 md:h-40 object-contain" />
+            </div>
+            <p class="font-structure text-lg md:text-2xl text-gray-500 tracking-widest uppercase mt-6">ORGANIZATION</p>
+
+            <div class="mt-12 flex flex-col md:flex-row justify-between md:items-end w-full border-t border-gray-800 pt-6">
+                <p class="body-text font-medium text-gray-300 max-w-md">Bản tuyên ngôn chính thức chi tiết hóa cấu trúc, triết lý và tương lai chiến lược của thương hiệu.</p>
+                <p class="micro-label text-gray-500 mt-6 md:mt-0">TÀI LIỆU NỘI BỘ & ĐƯỢC GIÁM TUYỂN</p>
             </div>
         </div>
     </header>
@@ -159,8 +158,8 @@
 
         <!-- The Interactive Grid -->
         <div class="w-full grid grid-cols-1 md:grid-cols-3 border-y border-obsidian">
-            <!-- Concept 1: Jade Reveal -->
-            <div class="p-8 md:p-16 border-b md:border-b-0 md:border-r border-obsidian min-h-[50vh] flex flex-col justify-between reveal-bg-jade">
+            <!-- Concept 1: Muted Reveal -->
+            <div class="p-8 md:p-16 border-b md:border-b-0 md:border-r border-obsidian min-h-[50vh] flex flex-col justify-between hover:bg-[var(--pumice)] transition-colors duration-1000">
                 <h3 class="section-heading !text-4xl md:!text-5xl">EN-TI</h3>
                 <div>
                     <p class="micro-label mb-4 border-b border-obsidian pb-2">/ˈæn.ti/ — Sự Phản Kháng</p>
@@ -168,8 +167,8 @@
                 </div>
             </div>
 
-            <!-- Concept 2: Cobalt Reveal -->
-            <div class="p-8 md:p-16 border-b md:border-b-0 md:border-r border-obsidian min-h-[50vh] flex flex-col justify-between reveal-bg-cobalt group">
+            <!-- Concept 2: Obsidian Reveal -->
+            <div class="p-8 md:p-16 border-b md:border-b-0 md:border-r border-obsidian min-h-[50vh] flex flex-col justify-between reveal-bg-obsidian group">
                 <h3 class="section-heading !text-4xl md:!text-5xl">AN TÂM</h3>
                 <div>
                     <p class="micro-label mb-4 border-b border-obsidian pb-2">Sự Tin Tưởng / Nền Tảng</p>
@@ -177,8 +176,8 @@
                 </div>
             </div>
 
-            <!-- Concept 3: The Ant (Now reveals Orange) -->
-            <div class="p-8 md:p-16 min-h-[50vh] flex flex-col justify-between bg-white reveal-bg-orange group">
+            <!-- Concept 3: Accent Reveal -->
+            <div class="p-8 md:p-16 min-h-[50vh] flex flex-col justify-between bg-white reveal-bg-accent group">
                 <h3 class="section-heading !text-4xl md:!text-5xl">LOÀI KIẾN</h3>
                 <div>
                     <p class="micro-label mb-4 border-b border-obsidian pb-2">Văn Hóa / Biểu Tượng</p>
@@ -198,11 +197,6 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <!-- Left: Cinematic Image -->
             <div class="aspect-[3/4] w-full img-container relative overflow-hidden bg-obsidian">
-                <!-- 
-                    TO CHANGE THE IMAGE: 
-                    Replace the 'src' link below (https://images.unsplash.com/...) 
-                    with the URL of your own image. 
-                -->
                 <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop" class="img-cinematic" alt="Gallery Space">
                 <div class="absolute bottom-6 left-6 text-white mix-blend-difference pointer-events-none">
                     <p class="micro-label">TƯƠNG TÁC: RÊ CHUỘT</p>
@@ -224,9 +218,9 @@
                 <div class="border-t border-obsidian pt-6">
                     <p class="micro-label mb-2">Giai đoạn III</p>
                     <h3 class="font-structure font-bold text-2xl mb-3">Nghệ Thuật Chế Tác</h3>
-                    <p class="body-text text-gray-600">Kỹ thuật bậc thầy được thực thi bằng kỷ luật thép. Từ những đường cắt sắc bén, đến các dịch vụ hóa chất (màu sắc, kết cấu) được trau chuốt tỉ mỉ; mọi thao tác đều được cá nhân hóa để đáp ứng hoàn hảo yêu cầu khắt khe của khách hàng.</p>
+                    <p class="body-text text-gray-600">Kỹ thuật bậc thầy được thực thi bằng kỷ luật thép. Từ những đường cắt sắc bén theo cấu trúc giải phẫu, đến các dịch vụ hóa chất (màu sắc, kết cấu) được trau chuốt tỉ mỉ; mọi thao tác đều được cá nhân hóa để đáp ứng hoàn hảo yêu cầu khắt khe của khách hàng.</p>
                 </div>
-                <div class="border-t border-obsidian pt-6 reveal-bg-jade p-6 -mx-6 mt-6">
+                <div class="border-t border-obsidian pt-6 hover:bg-[var(--pumice)] transition-colors duration-1000 p-6 -mx-6 mt-6">
                     <p class="micro-label mb-2">Giai đoạn IV</p>
                     <h3 class="font-structure font-bold text-2xl mb-3">Nuôi Dưỡng</h3>
                     <p class="body-text">Xây dựng mối quan hệ sau dịch vụ. Đưa khách hàng bước vào một cộng đồng văn hóa được giám tuyển kỹ lưỡng, quy tụ những cá nhân cùng chung gu thẩm mỹ.</p>
@@ -236,7 +230,7 @@
     </section>
 
    <!-- 04. THE CLIENT (Target Audience) -->
-    <section class="w-full px-6 py-24 md:px-16 md:py-40 bg-[var(--obsidian)] text-[var(--ash)] flex flex-col lg:flex-row gap-16 md:gap-24 reveal-bg-cobalt group">
+    <section class="w-full px-6 py-24 md:px-16 md:py-40 bg-[var(--obsidian)] text-[var(--ash)] flex flex-col lg:flex-row gap-16 md:gap-24 reveal-bg-obsidian group">
         
         <!-- Left Column: Anchor -->
         <div class="lg:w-1/3 flex flex-col">
@@ -248,7 +242,7 @@
         <div class="lg:w-2/3 flex flex-col justify-center w-full">
             
             <!-- Subtitle -->
-            <p class="font-fluid italic text-2xl md:text-3xl text-gray-400 group-hover:text-[var(--ash)] mb-16 transition-colors duration-1000">
+            <p class="font-ysabeau font-light italic text-2xl md:text-3xl text-gray-400 group-hover:text-[var(--ash)] mb-16 transition-colors duration-1000">
                 Phục vụ những cá nhân thành đạt với tiêu chuẩn sống khắt khe—những người trân trọng thời gian, sở hữu mức thu nhập cao và đặc biệt chú trọng đến sự hoàn mỹ trong hình thức bề ngoài.
             </p>
 
@@ -257,14 +251,14 @@
                 
                 <!-- Pillar 1 -->
                 <div class="flex flex-col py-8 md:pr-10 md:border-r border-gray-800 group-hover:border-white/30 transition-colors duration-1000">
-                    <p class="micro-label mb-6 text-gray-500 group-hover:text-gray-300 transition-colors duration-1000">01 / Nhân Khẩu Học</p>
+                    <p class="micro-label mb-6 text-gray-500 group-hover:text-gray-300 transition-colors duration-1000">01 / Hồ Sơ Khách Hàng</p>
                     <ul class="space-y-3 font-structure text-sm mb-8 text-gray-300 group-hover:text-white transition-colors duration-1000">
-                        <li>+ Lãnh đạo cấp cao</li>
-                        <li>+ Phụ huynh hiện đại</li>
-                        <li>+ Chuyên gia & Người sáng tạo</li>
+                        <li>+ Tinh hoa trẻ & Nghệ sĩ (Celebs, Creators)</li>
+                        <li>+ Chuyên gia quốc tế (Expats)</li>
+                        <li>+ Lãnh đạo & Gia đình hiện đại</li>
                     </ul>
                     <p class="text-sm mt-auto text-gray-500 group-hover:text-gray-300 transition-colors duration-1000 leading-relaxed">
-                        (Tệp khách hàng trải rộng 16–60, với chân dung cốt lõi 28–50). Tất cả đều được gắn kết vượt qua giới hạn tuổi tác bởi một tiêu chuẩn chung về sự xa xỉ không thỏa hiệp.
+                        Độ tuổi (16–60) không phải là ranh giới. Chân dung khách hàng được xác định bởi vị thế và tư duy. Tất cả đều được gắn kết bởi một tiêu chuẩn chung về sự xa xỉ không thỏa hiệp.
                     </p>
                 </div>
 
@@ -302,7 +296,7 @@
 
             <!-- Footer Anchor / Manifesto -->
             <div class="mt-16 max-w-3xl">
-                <p class="font-fluid italic text-3xl md:text-4xl text-[var(--ash)] leading-tight">
+                <p class="font-ysabeau font-light italic text-3xl md:text-4xl text-[var(--ash)] leading-tight">
                     "Chúng tôi không đợi được yêu cầu; chúng tôi quan sát, dự đoán và thăng hoa từng khoảnh khắc bằng sự tinh tế tuyệt đối."
                 </p>
             </div>
@@ -331,19 +325,19 @@
         </div>
 
         <!-- Roadmap -->
-        <div class="lg:w-1/2 p-6 py-24 md:p-16 bg-[var(--ash)] flex flex-col justify-between reveal-bg-jade group">
+        <div class="lg:w-1/2 p-6 py-24 md:p-16 bg-[var(--pumice)] flex flex-col justify-between group">
             <div>
-                <p class="font-structure font-black text-4xl text-gray-400 group-hover:text-obsidian mb-12 transition-colors duration-1000">06</p>
+                <p class="font-structure font-black text-4xl text-gray-500 group-hover:text-obsidian mb-12 transition-colors duration-1000">06</p>
                 <h2 class="section-heading mb-16">Lộ Trình<br>Chiến Lược</h2>
                 
                 <div class="mb-12 border-l border-gray-400 group-hover:border-obsidian pl-6 transition-colors duration-1000">
-                    <h3 class="font-fluid italic text-3xl mb-2">Giai đoạn 01: Nền Tảng</h3>
-                    <p class="body-text text-gray-600 group-hover:text-obsidian transition-colors duration-1000">Thiết lập nền tảng thẩm mỹ cốt lõi, ra mắt các bộ sưu tập ý tưởng và củng cố vị thế uy tín của dịch vụ làm tóc.</p>
+                    <h3 class="font-ysabeau font-light italic text-3xl mb-2">Giai đoạn 01: Nền Tảng</h3>
+                    <p class="body-text text-gray-700 group-hover:text-obsidian transition-colors duration-1000">Thiết lập nền tảng thẩm mỹ cốt lõi, ra mắt các bộ sưu tập ý tưởng và củng cố vị thế uy tín của dịch vụ làm tóc.</p>
                 </div>
                 
                 <div class="border-l border-gray-400 group-hover:border-obsidian pl-6 transition-colors duration-1000">
-                    <h3 class="font-fluid italic text-3xl mb-2">Giai đoạn 02: Trung Tâm Kết Nối</h3>
-                    <p class="body-text text-gray-600 group-hover:text-obsidian transition-colors duration-1000">Phát triển thành một trung tâm phong cách sống nghệ thuật cho cộng đồng. Sự tích hợp giữa các sản phẩm vật lý và sự kiện văn hóa.</p>
+                    <h3 class="font-ysabeau font-light italic text-3xl mb-2">Giai đoạn 02: Trung Tâm Kết Nối</h3>
+                    <p class="body-text text-gray-700 group-hover:text-obsidian transition-colors duration-1000">Phát triển thành một trung tâm phong cách sống nghệ thuật cho cộng đồng. Sự tích hợp giữa các sản phẩm vật lý và sự kiện văn hóa.</p>
                 </div>
             </div>
         </div>
@@ -357,27 +351,27 @@
                 <h2 class="section-heading">Hệ Thống<br>Kiểu Chữ</h2>
             </div>
             <div class="max-w-md mt-8 md:mt-0">
-                <p class="body-text">Sự ma sát có chủ ý giữa tính kỷ luật cấu trúc và sự thanh lịch, uyển chuyển. Kiểu chữ được sử dụng như một công cụ kiến trúc để phân tách dữ liệu thô và câu chuyện nghệ thuật.</p>
+                <p class="body-text">Sự ma sát có chủ ý giữa tính biểu tượng hoành tráng và sự kỷ luật. Kiểu chữ được sử dụng như một công cụ kiến trúc để phân tách câu chuyện nghệ thuật và dữ liệu thô.</p>
             </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 border border-obsidian">
-            <!-- Font 1: The Structure -->
+            <!-- Font 1: The Structure (Headings) -->
             <div class="p-8 md:p-16 border-b lg:border-b-0 lg:border-r border-obsidian bg-white reveal-bg-obsidian">
-                <p class="micro-label mb-12">Phông Chính / Sự Kỷ Luật</p>
-                <div class="font-structure">
-                    <p class="text-6xl md:text-8xl font-black mb-4 tracking-tighter">INTER</p>
-                    <p class="text-xl md:text-2xl mb-8">Thực dụng. Cấu trúc. Thô mộc.</p>
-                    <p class="text-sm opacity-70 max-w-sm">Được sử dụng cho các tiêu đề lớn, số thứ tự, nhãn phụ, và toàn bộ nội dung mang tính nền tảng kiến trúc.</p>
+                <p class="micro-label mb-12">Phông Tiêu Đề / Tính Biểu Tượng</p>
+                <div class="font-ysabeau">
+                    <p class="text-5xl md:text-7xl font-light mb-4 tracking-tight uppercase">Ysabeau</p>
+                    <p class="font-structure text-xl md:text-2xl mb-8">Tinh giản. Sắc bén. Hiện đại.</p>
+                    <p class="font-structure text-sm opacity-70 max-w-sm">Phông chữ không chân (sans-serif) có độ tương phản cao. Hỗ trợ hoàn hảo dấu tiếng Việt. Phản chiếu chính xác tỉ lệ hình học mỏng và nét vát sắc bén của logo thương hiệu.</p>
                 </div>
             </div>
-            <!-- Font 2: The Evolution -->
-            <div class="p-8 md:p-16 bg-[var(--ash)] reveal-bg-orange">
-                <p class="micro-label mb-12">Phông Phụ / Sự Tiến Hóa</p>
-                <div class="font-fluid">
-                    <p class="text-6xl md:text-8xl italic mb-4">Cormorant</p>
-                    <p class="font-structure text-xl md:text-2xl mb-8">Nghệ thuật. Uyển chuyển. Siêu việt.</p>
-                    <p class="font-structure text-sm opacity-70 max-w-sm">Chỉ được sử dụng khắt khe cho chữ logo, từ khóa chiến lược và những điểm nhấn can thiệp nghệ thuật.</p>
+            <!-- Font 2: The Discipline (Body) -->
+            <div class="p-8 md:p-16 bg-[var(--pumice)] reveal-bg-accent">
+                <p class="micro-label mb-12">Phông Nội Dung / Tính Kỷ Luật</p>
+                <div class="font-structure">
+                    <p class="text-5xl md:text-6xl font-light mb-4 tracking-tight uppercase">Plus Jakarta Sans</p>
+                    <p class="font-structure text-xl md:text-2xl mb-8">Vô hình. Chuyên nghiệp. Tuyệt đối.</p>
+                    <p class="font-structure text-sm opacity-70 max-w-sm">Thiết lập một không gian đọc mang tính biên tập cao. Plus Jakarta Sans cung cấp sự tĩnh lặng và kỷ luật cần thiết cho một "phòng thí nghiệm linh hoạt".</p>
                 </div>
             </div>
         </div>
@@ -391,41 +385,35 @@
                 <h2 class="section-heading">Nhận Diện<br>Thị Giác</h2>
             </div>
             <div class="max-w-md mt-8 md:mt-0">
-                <p class="body-text">Bảng màu được xây dựng trên một nền tảng kiến trúc đơn sắc. Để thể hiện <span class="font-fluid italic">Sự Tiến Hóa</span>, các dải màu nhấn mang tính tổng hợp sẽ xâm nhập vào thiết kế thông qua tương tác vật lý (hover).</p>
+                <p class="body-text">Bảng màu được xây dựng trên nền tảng kiến trúc đơn sắc và trung tính. <span class="font-ysabeau font-light italic">Màu nhấn chiến dịch</span> mang tính thích ứng, xâm nhập vào thiết kế thông qua tương tác vật lý (hover) tùy thuộc vào thông điệp hiện tại.</p>
             </div>
         </div>
 
         <!-- The Color Blocks -->
-        <div class="grid grid-cols-1 md:grid-cols-5 aspect-[1/2] md:aspect-[3/1] w-full border border-obsidian">
+        <div class="grid grid-cols-1 md:grid-cols-4 aspect-[1/2] md:aspect-[3/1] w-full border border-obsidian">
             <!-- Base 1 -->
             <div class="bg-[var(--ash)] p-6 flex flex-col justify-end border-b md:border-b-0 md:border-r border-obsidian">
-                <p class="micro-label">Nền Tảng</p>
-                <p class="font-structure font-bold mt-2">Xám Kiến Trúc (Ash)</p>
-                <p class="micro-label text-gray-400 mt-1">#F7F7F6</p>
+                <p class="micro-label">Cốt Lõi 1</p>
+                <p class="font-structure font-bold mt-2">Xám Trắng (Ash)</p>
+                <p class="micro-label text-gray-400 mt-1">Kiến trúc cơ sở</p>
             </div>
             <!-- Base 2 -->
             <div class="bg-[var(--obsidian)] text-ash p-6 flex flex-col justify-end border-b md:border-b-0 md:border-r border-obsidian">
-                <p class="micro-label">Bóng Tối</p>
+                <p class="micro-label">Cốt Lõi 2</p>
                 <p class="font-structure font-bold mt-2">Đen (Obsidian)</p>
-                <p class="micro-label text-gray-500 mt-1">#050505</p>
+                <p class="micro-label text-gray-500 mt-1">Độ tương phản tuyệt đối</p>
             </div>
-            <!-- Accent 1 (Cinematic Reveal) -->
-            <div class="bg-white p-6 flex flex-col justify-end border-b md:border-b-0 md:border-r border-obsidian reveal-bg-jade cursor-crosshair">
-                <p class="micro-label">Tương Phản 01</p>
-                <p class="font-structure font-bold mt-2">Xanh Ngọc (Jade)</p>
-                <p class="micro-label opacity-50 mt-1">#B2FF05</p>
+            <!-- The Bridge -->
+            <div class="bg-[var(--pumice)] p-6 flex flex-col justify-end border-b md:border-b-0 md:border-r border-obsidian">
+                <p class="micro-label">Lớp Chuyển Tiếp</p>
+                <p class="font-structure font-bold mt-2">Đá Bọt (Pumice)</p>
+                <p class="micro-label text-gray-500 mt-1">Tính hữu cơ & sự cân bằng</p>
             </div>
-            <!-- Accent 2 (Cinematic Reveal) -->
-            <div class="bg-[var(--obsidian)] text-ash p-6 flex flex-col justify-end border-b md:border-b-0 md:border-r border-obsidian reveal-bg-cobalt cursor-crosshair group">
-                <p class="micro-label">Tương Phản 02</p>
-                <p class="font-structure font-bold mt-2 group-hover:text-ash">Xanh Cobalt</p>
-                <p class="micro-label opacity-50 mt-1 group-hover:text-ash">#2B00FF</p>
-            </div>
-            <!-- Accent 3 (Cinematic Reveal) -->
-            <div class="bg-white p-6 flex flex-col justify-end reveal-bg-orange cursor-crosshair">
-                <p class="micro-label">Tương Phản 03</p>
-                <p class="font-structure font-bold mt-2">Cam Công Nghiệp</p>
-                <p class="micro-label opacity-50 mt-1">#FF4500</p>
+            <!-- Adaptive Accent -->
+            <div class="bg-[var(--campaign-accent)] text-white p-6 flex flex-col justify-end">
+                <p class="micro-label opacity-70">Sự Tiến Hóa</p>
+                <p class="font-structure font-bold mt-2">Màu Nhấn (Biến Đổi)</p>
+                <p class="micro-label opacity-70 mt-1">Phụ thuộc chiến dịch</p>
             </div>
         </div>
     </section>
