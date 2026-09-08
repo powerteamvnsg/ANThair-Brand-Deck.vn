@@ -89,16 +89,36 @@
         .reveal-bg-obsidian:hover { background-color: var(--obsidian); color: var(--ash); }
         .reveal-bg-obsidian:hover .body-text, .reveal-bg-obsidian:hover .micro-label { color: var(--ash); }
         
-        /* Slow-bloom Photography - Thermal Inversion Applied */
+        /* High-Fidelity Cinematic Photography */
+        .img-container {
+            position: relative;
+        }
+        
+        /* SVG Film Grain Overlay */
+        .img-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.12'/%3E%3C/svg%3E");
+            pointer-events: none;
+            mix-blend-mode: overlay;
+            transition: var(--slow-reveal);
+        }
+
         .img-cinematic {
-            filter: grayscale(100%) contrast(250%) brightness(0.8);
+            filter: sepia(15%) saturate(85%) contrast(110%) brightness(0.95);
             transition: var(--slow-reveal);
             object-fit: cover;
             width: 100%;
             height: 100%;
         }
+
+        .img-container:hover::after {
+            opacity: 0;
+        }
+
         .img-container:hover .img-cinematic {
-            filter: grayscale(0%) contrast(100%) brightness(1);
+            filter: sepia(0%) saturate(100%) contrast(100%) brightness(1);
         }
         
         /* Layout Utilities */
@@ -219,7 +239,7 @@
             <!-- Left: Cinematic Image -->
             <div class="aspect-[3/4] w-full img-container relative overflow-hidden bg-obsidian border border-obsidian">
                 <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop" class="img-cinematic" alt="Gallery Space">
-                <div class="absolute bottom-6 left-6 text-white mix-blend-difference pointer-events-none">
+                <div class="absolute bottom-6 left-6 text-white mix-blend-difference pointer-events-none z-10">
                     <p class="micro-label">TƯƠNG TÁC: RÊ CHUỘT</p>
                 </div>
             </div>
